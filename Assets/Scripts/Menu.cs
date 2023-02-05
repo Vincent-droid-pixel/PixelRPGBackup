@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Menu : MonoBehaviour
+public class Menu : CharacterMenu
 {
     private Animator anim;
 
@@ -12,7 +12,7 @@ public class Menu : MonoBehaviour
         open = false;
     }
 
-    private bool open;
+    public bool open;
 
     private void Update()
     {
@@ -22,6 +22,7 @@ public class Menu : MonoBehaviour
             {
                 anim.SetTrigger("Show");
                 open = true;
+                UpdateMenu();
             }
             else if (open == true)
             {

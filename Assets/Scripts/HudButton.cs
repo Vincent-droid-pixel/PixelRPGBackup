@@ -9,23 +9,23 @@ public class HudButton : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        open = false;
+        openbutton = false;
     }
-    private bool open;
+    public bool openbutton;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (open == false)
+            if (openbutton == false)
             {
                 anim.SetTrigger("Open");
-                open = true;
+                openbutton = true;
             }
-            else if (open == true)
+            else if (openbutton == true)
             {
                 anim.SetTrigger("Closed");
-                open = false;
+                openbutton = false;
             }  
         }
     }
